@@ -1,7 +1,6 @@
 // REACT
-import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -37,6 +36,7 @@ import LandingScreen from './Components/auth/Landing.js';
 import RegisterScreen from "./Components/auth/Register.js";
 import LoginScreen from './Components/auth/Login.js'
 import MainScreen from './Components/Main.js'
+import AddScreen from './Components/main/add.js'
 
 const Stack = createStackNavigator();
 
@@ -92,7 +92,12 @@ export default class App extends Component {
     }
     return (
       <Provider store={store}>
-        <MainScreen />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Landing">
+            <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Add" component={AddScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </Provider>
     )
   }
