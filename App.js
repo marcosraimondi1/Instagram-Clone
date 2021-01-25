@@ -1,9 +1,19 @@
+// REACT
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//REDUX
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from './redux/reducers'
+import thunk from 'redux-thunk'
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+
+// FIREBASE
 import * as firebase from 'firebase';
 // initialize firebase
 // in prodcution, use environment variables to hide keys
@@ -22,9 +32,11 @@ if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig)
 }
 
+// COMPONENTS
 import LandingScreen from './Components/auth/Landing.js';
 import RegisterScreen from "./Components/auth/Register.js";
 import LoginScreen from './Components/auth/Login.js'
+import MainScreen from './Components/Main.js'
 
 const Stack = createStackNavigator();
 
@@ -79,18 +91,9 @@ export default class App extends Component {
       )
     }
     return (
-      <View style={{ flex: 1, justifyContent: 'center' }}>
-        <Text>User Logged In</Text>
-      </View>
+      <Provider store={store}>
+        <MainScreen />
+      </Provider>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
