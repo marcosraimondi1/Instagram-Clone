@@ -37,6 +37,7 @@ import RegisterScreen from "./Components/auth/Register.js";
 import LoginScreen from './Components/auth/Login.js'
 import MainScreen from './Components/Main.js'
 import AddScreen from './Components/main/add.js'
+import SaveScreen from './Components/main/save.js'
 
 const Stack = createStackNavigator();
 
@@ -95,7 +96,9 @@ export default class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Landing">
             <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Add" component={AddScreen} />
+            {/* pass navigation to functional components */}
+            <Stack.Screen name="Add" component={AddScreen} navigation={this.props.navigation} />
+            <Stack.Screen name="Save" component={SaveScreen} navigation={this.props.navigation} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
