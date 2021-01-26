@@ -14,7 +14,7 @@ export default function save(props) {
         const uri = props.route.params.image
         // using random number represented as a string in a 36 base to identiy image
         const childPath = `post/${firebase.auth().currentUser.uid}/${Math.random().toString(36)}`
-        console.log('childPath ', childPath)
+        // console.log('childPath ', childPath)
 
         const response = await fetch(uri)
         const blob = await response.blob();
@@ -26,7 +26,7 @@ export default function save(props) {
             .put(blob);
 
         const taskProgress = snapshot => {
-            console.log(`transferred: ${snapshot.bytesTransferred}   `)
+            // console.log(`transferred: ${snapshot.bytesTransferred}   `)
         }
 
         const taskCompleted = () => {
