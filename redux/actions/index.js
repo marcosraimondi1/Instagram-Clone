@@ -57,13 +57,13 @@ export function fetchUserFollowing() {
                 })
                 dispatch({ type: USER_FOLLOWING_STATE_CHANGE, following })
                 for (let i = 0; i < following.length; i++) {
-                    dispatch(fetchUsersData(following[i]));
+                    dispatch(fetchUsersData(following[i], true));
                 }
             })
     })
 }
 
-export function fetchUsersData(uid) {
+export function fetchUsersData(uid, getPosts) {
     return ((dispatch, getState) => {
         // see if there is element already in users
         const found = getState().usersState.users.some(el => el.uid === uid)
@@ -77,10 +77,12 @@ export function fetchUsersData(uid) {
                         let user = snapshot.data()
                         user.uid = snapshot.id
                         dispatch({ type: USERS_DATA_STATE_CHANGE, user })
-                        dispatch(fetchUsersFollowingPosts(user.uid))
                     }
                     else {
                         console.log('does not exist')
+                    }
+                    if (getPosts) {
+                        dispatch(fetchUsersFollowingPosts(uid))
                     }
                 })
         }

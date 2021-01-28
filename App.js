@@ -38,6 +38,7 @@ import LoginScreen from './Components/auth/Login.js'
 import MainScreen from './Components/Main.js'
 import AddScreen from './Components/main/add.js'
 import SaveScreen from './Components/main/save.js'
+import CommentScreen from './Components/main/comments.js'
 
 const Stack = createStackNavigator();
 
@@ -99,6 +100,7 @@ export default class App extends Component {
             {/* pass navigation to functional components */}
             <Stack.Screen name="Add" component={AddScreen} navigation={this.props.navigation} />
             <Stack.Screen name="Save" component={SaveScreen} navigation={this.props.navigation} />
+            <Stack.Screen name="Comment" component={CommentScreen} navigation={this.props.navigation} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
