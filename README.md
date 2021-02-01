@@ -6,13 +6,13 @@ Instagram app development using React Native looking forward to learning the wor
 
 Copying instagram's social application:
 
--> Login and Register screen with firebase authentication
--> Bottom tabs navigation
--> Stack Navigation
--> Add a picture with camera or gallery
--> Save image with caption and upload to Firebase Firestore database
--> Display images uploaded by user on profile screen
--> Following other users functionality
--> Displaying followed users images on feed screen
--> Comment functionality
--> Logout handling
+- Login and Register screen with firebase authentication
+- Bottom tabs navigation
+- Stack Navigation
+- Add a picture with camera or gallery
+- Save image with caption and upload to Firebase Firestore database
+- Display images uploaded by user on profile screen
+- Following other users functionality
+- Displaying followed users images on feed screen
+- Comment functionality
+- Logout handling
