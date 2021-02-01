@@ -1,6 +1,8 @@
 # Instagram-Clone with React Native:
 
-Instagram app development using React Native looking forward to learning the workflow React along side with the tools provided by EXPO. The main objective of this project is to learn how to handle backend databases with FIREBASE and deepen into REDUX usage. All considerations to freeCodeCamp.org following youtube tutorial: https://www.youtube.com/watch?v=1hPgQWbWmEk&feature=youtu.be .
+Instagram app development using React Native looking forward to learning the workflow React along side with the tools provided by EXPO. The main objective of this project is to learn how to handle backend databases with FIREBASE and deepen into REDUX usage. 
+
+All considerations to freeCodeCamp.org following youtube tutorial: https://www.youtube.com/watch?v=1hPgQWbWmEk&feature=youtu.be .
 
 ### APP's main functions:
 
